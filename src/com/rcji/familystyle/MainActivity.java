@@ -7,6 +7,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rcji.familystyle.locu.Locu;
@@ -21,10 +24,22 @@ public class MainActivity extends Activity {
         tv = (TextView) findViewById(R.id.maintv);
         LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE); 
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        //double longitude = location.getLongitude();
-      //  double latitude = location.getLatitude();
+        if (location!=null) {
+        	double longitude = location.getLongitude();
+        	double latitude = location.getLatitude();
+        	Locu.query(latitude, longitude, tv);
+        }
         //lm.requestLocationUpdates(LocationManager.GPS, 2000, 10, locationListener);
-        
+        final ImageView iv = (ImageView) findViewById(R.id.mainiv);
+        iv.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				tv.setVisibility(View.VISIBLE);
+				iv.setVisibility(View.GONE);
+				ChoiceActivity.startInstance(MainActivity.this);
+				
+			}
+		});
 
         lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 10, locationListener);
         
