@@ -26,14 +26,4 @@
         android:textSize="26sp"
         android:textStyle="bold" />
 
-    <com.google.android.maps.MapView
-        android:id="@+id/mapview"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:apiKey="AIzaSyAKBAPAxlerK9a36mNIwdOEorZQIwzviZY"
-        android:clickable="false" >
-    </com.google.android.maps.MapView>
-
 </RelativeLayout>

@@ -14,11 +14,18 @@
         tools:context=".MainActivity" />
 
     <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/familystylelogob" />
+
+    <ImageView
         android:id="@+id/mainiv"
         android:layout_width="650px"
         android:layout_height="515px"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginBottom="44dp"
         android:clickable="true"
         android:scaleType="fitXY"
         android:src="@drawable/nom_csl" />
